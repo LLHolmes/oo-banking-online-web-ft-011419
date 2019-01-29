@@ -14,11 +14,14 @@ class Transfer
   end
   
   def execute_transaction
-    if @status == "pending"
-      @receiver.deposit(@amount)
-      @sender.deposit(-@amount)
-      @status = "complete"
-    end
+    if self.valid? == true
+      if @status == "pending"
+        @receiver.deposit(@amount)
+        @sender.deposit(-@amount)
+        @status = "complete"
+      end
+    else
+      "true"
   end
   
   def reverse_transfer
