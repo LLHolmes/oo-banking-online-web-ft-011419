@@ -12,6 +12,7 @@ class BankAccount
   end
   
   def display_balance
+    "#{@balance}"
   end
   
   def valid?
