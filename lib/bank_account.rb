@@ -10,5 +10,16 @@ class BankAccount
   
   def deposit
   end
+  
+  def display_balance
+  end
+  
+  def valid?
+    true if @status == "open" && @balance > 0
+  end
+  
+  def close_account
+    @status = "closed"
+  end
 
 end
