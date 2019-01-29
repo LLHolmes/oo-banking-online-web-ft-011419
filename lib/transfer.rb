@@ -14,6 +14,7 @@ class Transfer
   
   def execute_transaction
     @receiver.deposit(@amount)
+    @sender.deposit(-@amount)
   end
   
   def reverse_transfer
